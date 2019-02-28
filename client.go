@@ -218,7 +218,7 @@ func (cli *Client) MakeRequest(method string, httpURL string, reqBody interface{
 
 		// If we failed to decode as RespError, don't just drop the HTTP body, include it in the
 		// HTTP error instead (e.g proxy errors which return HTML).
-		msg := "Failed to " + method + " JSON to " + req.URL.Path
+		msg := "Failed to " + method + " JSON to " + req.URL.String()
 		if wrap == nil {
 			msg = msg + ": " + string(contents)
 		}
